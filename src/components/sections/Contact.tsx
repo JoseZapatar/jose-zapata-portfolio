@@ -18,7 +18,9 @@ export default function Contact() {
           <div className="lg:col-span-9">
             <Reveal delay={0.05}>
               <h2 className="max-w-[980px] text-balance text-[clamp(3.05rem,6.2vw,6.65rem)] font-medium leading-[0.94] tracking-[-0.06em]">
-                ¿Construimos algo que siga siendo fácil de mantener?
+                Si mi forma de trabajar conecta con la manera
+                en la que construyen software, me encantará
+                conversar.
               </h2>
             </Reveal>
             <Reveal delay={0.12}>
