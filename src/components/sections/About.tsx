@@ -1,141 +1,46 @@
-import {
-  BriefcaseBusiness,
-  CheckCircle2,
-  Code2,
-  GraduationCap,
-  MapPin,
-  ServerCog,
-} from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 
-const highlights = [
-  "APIs REST",
-  "Arquitectura por capas",
-  "SQL Server",
-  "React y Next.js",
-  "ASP.NET Core",
-  "Autenticación JWT",
-];
-
-const quickInfo = [
-  {
-    label: "Formación",
-    value: "Ingeniería en Sistemas",
-    icon: GraduationCap,
-  },
-  {
-    label: "Ubicación",
-    value: "Nicaragua",
-    icon: MapPin,
-  },
-  {
-    label: "Disponibilidad",
-    value: "Abierto a oportunidades",
-    icon: BriefcaseBusiness,
-  },
-  {
-    label: "Enfoque",
-    value: "Backend y Full Stack",
-    icon: ServerCog,
-  },
+const notes = [
+  { label: "Currently", value: "Ingeniería en Sistemas" },
+  { label: "Focus", value: "Backend · REST APIs · Full Stack" },
+  { label: "Learning", value: "Flutter · Laravel" },
 ];
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="relative overflow-hidden px-6 py-24 lg:px-8"
-    >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_75%_50%,rgba(59,130,246,0.06),transparent_42%)]" />
+    <section id="about" className="section-shell scroll-mt-24">
+      <div className="editorial-container">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
+          <Reveal className="lg:col-span-3">
+            <p className="editorial-label">About / 01</p>
+          </Reveal>
 
-      <div className="relative mx-auto max-w-7xl">
-        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-[0.22em] text-blue-400">
-              Sobre mí
-            </p>
+          <div className="lg:col-span-9">
+            <Reveal>
+              <h2 className="section-heading max-w-[940px] text-balance">
+                Disfruto entender sistemas, encontrar por qué fallan y construir soluciones que sigan siendo fáciles de mantener cuando el proyecto crece.
+              </h2>
+            </Reveal>
 
-            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
-              Desarrollo soluciones que conectan una base técnica sólida con una
-              experiencia de usuario clara.
-            </h2>
+            <div className="mt-[clamp(5rem,9vw,9rem)] grid gap-14 border-t border-white/10 pt-9 md:grid-cols-[1.12fr_.88fr] md:gap-20">
+              <Reveal delay={0.06}>
+                <p className="max-w-[36rem] text-[clamp(1rem,1.25vw,1.14rem)] leading-[1.82] text-[#AEB2A8]">
+                  Soy estudiante de Ingeniería en Sistemas. Me siento especialmente cómodo trabajando en la estructura de una aplicación: sus datos, reglas de negocio y API. También disfruto construir el frontend cuando la experiencia necesita una lógica clara y un estado bien organizado.
+                </p>
+              </Reveal>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
-              Soy estudiante de Ingeniería en Sistemas y desarrollador de
-              software. Me especializo en aplicaciones web, APIs REST,
-              autenticación, modelado de bases de datos y conexión entre
-              frontend y backend.
-            </p>
-
-            <p className="mt-4 max-w-2xl text-base leading-8 text-slate-500">
-              Disfruto convertir requerimientos de negocio en sistemas
-              organizados, mantenibles y fáciles de usar, cuidando tanto la
-              arquitectura como los detalles de implementación.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              {highlights.map((item) => (
-                <span
-                  key={item}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-slate-300"
-                >
-                  <CheckCircle2 size={15} className="text-blue-400" />
-                  {item}
-                </span>
-              ))}
+              <div className="divide-y divide-white/10 border-y border-white/10 md:translate-y-10 md:border-t-0">
+                {notes.map((note, index) => (
+                  <Reveal key={note.label} delay={0.08 + index * 0.06}>
+                    <div className="grid gap-3 py-7 sm:grid-cols-[8rem_1fr] md:grid-cols-1 lg:grid-cols-[8rem_1fr]">
+                      <p className="editorial-label">{note.label}</p>
+                      <p className="text-base leading-6 text-[#ECE9DF]">{note.value}</p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
             </div>
           </div>
-
-          <aside className="rounded-3xl border border-white/10 bg-white/[0.025] p-6 sm:p-8">
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-400/20 bg-blue-500/10 text-blue-300">
-                <Code2 size={22} />
-              </div>
-
-              <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-slate-500">
-                  Perfil profesional
-                </p>
-
-                <h3 className="mt-1 text-xl font-semibold text-white">
-                  Información rápida
-                </h3>
-              </div>
-            </div>
-
-            <div className="mt-8 space-y-4">
-              {quickInfo.map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <div
-                    key={item.label}
-                    className="flex items-start gap-4 rounded-2xl border border-white/10 bg-black/20 p-4"
-                  >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-slate-300">
-                      <Icon size={18} />
-                    </div>
-
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.16em] text-slate-600">
-                        {item.label}
-                      </p>
-
-                      <p className="mt-1 text-sm font-medium text-slate-200">
-                        {item.value}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="mt-6 rounded-2xl border border-emerald-400/15 bg-emerald-500/[0.06] p-4">
-              <p className="text-sm leading-6 text-emerald-200">
-                Disponible para oportunidades remotas, prácticas profesionales
-                y proyectos de desarrollo web.
-              </p>
-            </div>
-          </aside>
         </div>
       </div>
     </section>
