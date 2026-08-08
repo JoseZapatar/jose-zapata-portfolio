@@ -1,22 +1,18 @@
 import type { MetadataRoute } from "next";
-
 import { projects } from "@/data/projects";
+import { siteConfig } from "@/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-
   return [
     {
-      url: siteUrl,
-      lastModified: new Date(),
+      url: siteConfig.url,
+      lastModified: new Date("2026-07-30"),
       changeFrequency: "monthly",
       priority: 1,
     },
-
     ...projects.map((project) => ({
-      url: `${siteUrl}/projects/${project.slug}`,
-      lastModified: new Date(),
+      url: `${siteConfig.url}/projects/${project.slug}`,
+      lastModified: new Date("2026-07-30"),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),

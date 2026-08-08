@@ -1,19 +1,20 @@
 export const siteConfig = {
   name: "José Zapata",
-  title: "José Zapata | Backend & Full Stack Developer",
+  title: "José Zapata — Backend & Full Stack Developer",
   description:
-    "Portfolio de José Zapata, desarrollador de software especializado en ASP.NET Core, SQL Server, React y Next.js. Proyectos, arquitectura, APIs REST y bases de datos.",
+    "Portfolio de José Zapata, desarrollador backend y full stack especializado en ASP.NET Core, APIs REST, SQL Server, React y Next.js.",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "http://localhost:3000",
+    "https://jose-zapata-portfolio.vercel.app",
   locale: "es_NI",
   language: "es",
   email: "joseangelzapatarosales@gmail.com",
   github: "https://github.com/JoseZapatar",
+  linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL?.trim() || "",
+  resume: "/cv.pdf",
   keywords: [
     "José Zapata",
-    "desarrollador de software",
-    "backend developer",
+    "desarrollador backend",
     "full stack developer",
     "ASP.NET Core",
     "C#",

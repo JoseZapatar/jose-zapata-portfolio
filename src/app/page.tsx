@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <JsonLd />
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <div className="border-t border-white/10"><About /></div>
         <div className="border-t border-white/10"><Projects /></div>
