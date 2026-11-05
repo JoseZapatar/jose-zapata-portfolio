@@ -2143,6 +2143,136 @@ export const projectDetails: ProjectDetail[] = [
         ],
     },
 
+    {
+        slug: "lumora",
+
+        metrics: [],
+
+        overview: {
+            status: "Proyecto de hackathon",
+            frontend: "React Native (Expo)",
+            backend: "FastAPI",
+            database: "PostgreSQL",
+            authentication: "JWT",
+            deployment: "FastAPI Cloud y Neon",
+        },
+
+        architecture: {
+            title: "Separación de responsabilidades en Lumora Health Staff",
+            description:
+                "La app móvil consume una API que separa routers, servicios, repositorios y base de datos, de modo que las reglas clínicas viven en el backend y no dependen del cliente.",
+            layers: [
+                {
+                    name: "Capa de presentación",
+                    responsibility:
+                        "Muestra la agenda, los pacientes, el expediente y las recetas, organizada por módulos funcionales.",
+                    technologies: ["React Native", "Expo Router", "TanStack Query", "Zod"],
+                    type: "presentation",
+                },
+                {
+                    name: "Capa de API",
+                    responsibility:
+                        "Publica los endpoints REST y define los contratos HTTP de cada operación.",
+                    technologies: ["FastAPI", "Pydantic", "JWT"],
+                    type: "application",
+                },
+                {
+                    name: "Capa de servicios",
+                    responsibility:
+                        "Aplica las reglas de negocio, como la relación profesional-paciente y la ventana de edición de 48 horas.",
+                    technologies: ["Python"],
+                    type: "domain",
+                },
+                {
+                    name: "Capa de repositorios",
+                    responsibility:
+                        "Encapsula las consultas y el acceso a los modelos de datos.",
+                    technologies: ["SQLAlchemy"],
+                    type: "infrastructure",
+                },
+                {
+                    name: "Capa de persistencia",
+                    responsibility:
+                        "Almacena los datos clínicos y administra los cambios del esquema mediante migraciones.",
+                    technologies: ["PostgreSQL", "Neon", "Alembic"],
+                    type: "persistence",
+                },
+            ],
+        },
+
+        systemDesign: {
+            title: "",
+            description: "",
+            nodes: [],
+        },
+
+        databaseModel: {
+            title: "",
+            description: "",
+            entities: [],
+            relationships: [],
+        },
+
+        flow: [],
+        features: [],
+        techStack: [],
+
+        decisions: [
+            {
+                question: "¿Quién puede modificar un expediente?",
+                answer:
+                    "Un permiso no es suficiente. El backend exige una relación real con el paciente, por una cita o consulta previa, y la vuelve a comprobar en cada operación del historial clínico.",
+            },
+            {
+                question: "¿Hasta cuándo se puede editar un diagnóstico o una receta?",
+                answer:
+                    "Durante 48 horas. Pasado ese tiempo, la API rechaza el cambio con una respuesta 409.",
+            },
+            {
+                question: "¿Cómo se registra a un paciente que llega sin datos?",
+                answer:
+                    "El registro de emergencia solo exige nombre y apellido, porque en ese momento puede que no se conozca nada más. El resto del expediente se completa después.",
+            },
+            {
+                question: "¿Qué ocurre al iniciar sesión en otro dispositivo?",
+                answer:
+                    "Cada inicio de sesión revoca las demás sesiones activas de la cuenta, de modo que solo una permanece abierta.",
+            },
+        ],
+
+        gallery: [
+            {
+                title: "Seguimiento del expediente",
+                image: "/images/projects/lumora/expediente.png",
+                description:
+                    "Línea de tiempo, diagnósticos y alertas clínicas de un paciente. Capturas con datos ficticios.",
+            },
+            {
+                title: "Atención en consulta",
+                image: "/images/projects/lumora/consultas.png",
+                description:
+                    "Historial de consultas y formulario para registrar una nueva. Capturas con datos ficticios.",
+            },
+            {
+                title: "Recetas y registro de emergencia",
+                image: "/images/projects/lumora/recetas-emergencia.png",
+                description:
+                    "Recetas activas, formulario de prescripción y alta mínima de un paciente. Capturas con datos ficticios.",
+            },
+        ],
+
+        lessons: [
+            "Una función puede existir en el backend y aun así no llegar al usuario: el endpoint de horarios ya estaba hecho, pero ninguna pantalla lo llamaba y el paciente nunca veía su medicamento.",
+            "Restringir permisos por partes deja huecos, así que tuve que revisar todo el historial clínico para aplicar la misma regla en cada operación.",
+            "Una prueba de regresión da más confianza cuando confirmas que falla sin la corrección.",
+            "Las fechas se rompen en los detalles, como horas mostradas en UTC o un selector que marcaba un día menos.",
+        ],
+
+        codeStructure: [],
+        apiEndpoints: [],
+        challenges: [],
+        roadmap: [],
+    },
 
 ];
 
