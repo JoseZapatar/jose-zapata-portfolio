@@ -2242,10 +2242,22 @@ export const projectDetails: ProjectDetail[] = [
 
         gallery: [
             {
-                title: "Recetas y registro de emergencia",
-                image: "/images/projects/lumora/care.png",
+                title: "Seguimiento del expediente",
+                image: "/images/projects/lumora/expediente.png",
                 description:
-                    "Capturas de la app en modo de vista previa, con datos ficticios.",
+                    "Línea de tiempo, diagnósticos y alertas clínicas de un paciente. Capturas con datos ficticios.",
+            },
+            {
+                title: "Atención en consulta",
+                image: "/images/projects/lumora/consultas.png",
+                description:
+                    "Historial de consultas y formulario para registrar una nueva. Capturas con datos ficticios.",
+            },
+            {
+                title: "Recetas y registro de emergencia",
+                image: "/images/projects/lumora/recetas-emergencia.png",
+                description:
+                    "Recetas activas, formulario de prescripción y alta mínima de un paciente. Capturas con datos ficticios.",
             },
         ],
 
