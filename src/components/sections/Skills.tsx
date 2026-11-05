@@ -20,19 +20,19 @@ import {
 type StackIcon = ComponentType<{ className?: string; "aria-hidden"?: boolean | "true" | "false" }>;
 
 const stack: { name: string; note: string; icon: StackIcon }[] = [
-  { name: ".NET", note: "REST APIs", icon: SiDotnet },
+  { name: ".NET", note: "APIs REST", icon: SiDotnet },
   { name: "React", note: "Interfaces", icon: SiReact },
-  { name: "TypeScript", note: "Safer frontend", icon: SiTypescript },
-  { name: "SQL Server", note: "Relational design", icon: Database },
-  { name: "Next.js", note: "Web applications", icon: SiNextdotjs },
-  { name: "MySQL", note: "Relational data", icon: SiMysql },
-  { name: "Tailwind CSS", note: "UI systems", icon: SiTailwindcss },
-  { name: "Git", note: "Version control", icon: SiGit },
-  { name: "GitHub", note: "Collaboration", icon: SiGithub },
-  { name: "Postman", note: "API testing", icon: SiPostman },
-  { name: "Swagger", note: "API docs", icon: SiSwagger },
-  { name: "Linux", note: "Servers", icon: SiLinux },
-  { name: "Vercel", note: "Deployment", icon: SiVercel },
+  { name: "TypeScript", note: "Frontend más seguro", icon: SiTypescript },
+  { name: "SQL Server", note: "Diseño relacional", icon: Database },
+  { name: "Next.js", note: "Aplicaciones web", icon: SiNextdotjs },
+  { name: "MySQL", note: "Datos relacionales", icon: SiMysql },
+  { name: "Tailwind CSS", note: "Sistemas de UI", icon: SiTailwindcss },
+  { name: "Git", note: "Control de versiones", icon: SiGit },
+  { name: "GitHub", note: "Colaboración", icon: SiGithub },
+  { name: "Postman", note: "Pruebas de API", icon: SiPostman },
+  { name: "Swagger", note: "Documentación de API", icon: SiSwagger },
+  { name: "Linux", note: "Servidores", icon: SiLinux },
+  { name: "Vercel", note: "Despliegue", icon: SiVercel },
 ];
 
 export default function Skills() {
@@ -41,8 +41,8 @@ export default function Skills() {
       <div className="editorial-container">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-3">
-            <p className="editorial-label">Engineering stack / 03</p>
-            <p className="mt-4 max-w-xs text-sm leading-6 text-[#8D918B]">Current stack and frequently used tools.</p>
+            <p className="editorial-label">Stack técnico / 03</p>
+            <p className="mt-4 max-w-xs text-sm leading-6 text-[#8D918B]">Stack actual y herramientas que uso con frecuencia.</p>
           </div>
 
           <div className="lg:col-span-9">

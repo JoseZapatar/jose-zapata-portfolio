@@ -36,12 +36,12 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       locale: siteConfig.locale,
       url,
       siteName: `${siteConfig.name} Portfolio`,
-      title: `${project.title} — Case Study`,
+      title: `${project.title} — Caso de estudio`,
       description: project.description,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.title} — Case Study`,
+      title: `${project.title} — Caso de estudio`,
       description: project.description,
     },
   };
@@ -68,7 +68,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
             <div className="mt-[clamp(4rem,8vw,7rem)] grid gap-12 lg:grid-cols-12 lg:items-end">
               <div className="lg:col-span-8">
-                <p className="editorial-label">Case study / {project.title}</p>
+                <p className="editorial-label">Caso de estudio / {project.title}</p>
                 <h1 className="mt-7 text-[clamp(4rem,9vw,9rem)] font-medium leading-[0.88] tracking-[-0.07em]">
                   {project.title}
                 </h1>
@@ -79,10 +79,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
               <div className="lg:col-span-4 lg:pb-2">
                 <p className="text-sm leading-7 text-[#8D918B]">{project.description}</p>
+                {project.role && (
+                  <div className="mt-6 border-t border-white/10 pt-5">
+                    <p className="editorial-label">Mi rol</p>
+                    <p className="mt-3 text-sm leading-7 text-[#ECE9DF]">{project.role}</p>
+                  </div>
+                )}
                 <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm">
                   {project.demoUrl && (
                     <a href={project.demoUrl} target="_blank" rel="noreferrer" className="link-underline inline-flex items-center gap-2 pb-1 hover:text-[#D7FF43]">
-                      Live project <ArrowUpRight size={14} />
+                      Ver en vivo <ArrowUpRight size={14} />
                     </a>
                   )}
                   <a href={project.frontendUrl} target="_blank" rel="noreferrer" className="link-underline inline-flex items-center gap-2 pb-1 hover:text-[#D7FF43]">
@@ -110,11 +116,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <section className="border-y border-white/10">
           <div className="editorial-container grid lg:grid-cols-2">
             <article className="py-[clamp(4rem,7vw,7rem)] lg:border-r lg:border-white/10 lg:pr-16">
-              <p className="editorial-label">Problem / 01</p>
+              <p className="editorial-label">Problema / 01</p>
               <p className="mt-7 text-[clamp(1.7rem,3vw,3.1rem)] leading-[1.12] tracking-[-0.035em]">{project.problem}</p>
             </article>
             <article className="border-t border-white/10 py-[clamp(4rem,7vw,7rem)] lg:border-t-0 lg:pl-16">
-              <p className="editorial-label">Solution / 02</p>
+              <p className="editorial-label">Solución / 02</p>
               <p className="mt-7 text-[clamp(1.7rem,3vw,3.1rem)] leading-[1.12] tracking-[-0.035em] text-[#B7BBB1]">{project.solution}</p>
             </article>
           </div>
@@ -123,7 +129,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <section className="section-shell">
           <div className="editorial-container grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-3">
-              <p className="editorial-label">System / 03</p>
+              <p className="editorial-label">Sistema / 03</p>
             </div>
             <div className="lg:col-span-9">
               <h2 className="section-heading max-w-4xl">{detail.architecture.title}</h2>
@@ -147,7 +153,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         <section className="border-y border-white/10 section-shell">
           <div className="editorial-container grid gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-3"><p className="editorial-label">Decisions / 04</p></div>
+            <div className="lg:col-span-3"><p className="editorial-label">Decisiones / 04</p></div>
             <div className="lg:col-span-9 divide-y divide-white/10 border-y border-white/10">
               {detail.decisions.map((decision, index) => (
                 <article key={decision.question} className="grid gap-5 py-8 md:grid-cols-[70px_1fr_1.15fr]">
@@ -164,7 +170,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <section className="section-shell">
             <div className="editorial-container">
               <div className="grid gap-10 lg:grid-cols-12">
-                <p className="editorial-label lg:col-span-3">Product / 05</p>
+                <p className="editorial-label lg:col-span-3">Producto / 05</p>
                 <h2 className="section-heading lg:col-span-9">El resultado en uso.</h2>
               </div>
               <div className="mt-16 grid gap-10">
@@ -186,7 +192,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         <section className="border-y border-white/10 section-shell">
           <div className="editorial-container grid gap-12 lg:grid-cols-12">
-            <p className="editorial-label lg:col-span-3">Lessons / 06</p>
+            <p className="editorial-label lg:col-span-3">Aprendizajes / 06</p>
             <div className="lg:col-span-9">
               <h2 className="section-heading">Lo que aprendí construyéndolo.</h2>
               <ol className="mt-14 divide-y divide-white/10 border-y border-white/10">
@@ -203,11 +209,25 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         <section className="section-shell">
           <div className="editorial-container">
-            <p className="editorial-label">Next case study</p>
+            <p className="editorial-label">Siguiente caso de estudio</p>
             <Link href={`/projects/${nextProject.slug}`} className="group mt-8 flex items-end justify-between gap-8 border-b border-white/10 pb-8 hover:text-[#D7FF43]">
               <span className="text-[clamp(3.2rem,8vw,8rem)] font-medium leading-none tracking-[-0.065em]">{nextProject.title}</span>
               <ArrowUpRight className="mb-2 shrink-0 transition-transform duration-300 group-hover:-translate-y-2 group-hover:translate-x-2" size={36} />
             </Link>
+          </div>
+        </section>
+
+        <section className="border-t border-white/10 section-shell">
+          <div className="editorial-container grid gap-12 lg:grid-cols-12">
+            <p className="editorial-label lg:col-span-3">Contacto</p>
+            <div className="lg:col-span-9">
+              <h2 className="section-heading max-w-4xl text-balance">¿Construimos algo que siga siendo fácil de mantener?</h2>
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-[#9EA298]">Estoy abierto a oportunidades remotas como desarrollador backend o full stack.</p>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <a href={`mailto:${siteConfig.email}`} className="button-primary">Escribirme un correo</a>
+                <Link href="/#contact" className="button-secondary">Ver más formas de contacto</Link>
+              </div>
+            </div>
           </div>
         </section>
       </main>

@@ -3,12 +3,12 @@ import { siteConfig } from "@/config/site";
 import Reveal from "@/components/ui/Reveal";
 
 const links = [
-  { label: "Email", href: `mailto:${siteConfig.email}`, external: false },
+  { label: "Correo", href: `mailto:${siteConfig.email}`, external: false },
   { label: "GitHub", href: siteConfig.github, external: true },
   ...(siteConfig.linkedin
     ? [{ label: "LinkedIn", href: siteConfig.linkedin, external: true }]
     : []),
-  { label: "Résumé", href: siteConfig.resume, external: false, download: true },
+  { label: "CV", href: siteConfig.resume, external: false, download: true },
 ];
 
 export default function Contact() {
@@ -17,7 +17,7 @@ export default function Contact() {
       <div className="editorial-container flex min-h-[72svh] flex-col justify-between">
         <div className="grid gap-12 lg:grid-cols-12">
           <Reveal className="lg:col-span-3">
-            <p className="editorial-label">Contact / 04</p>
+            <p className="editorial-label">Contacto / 04</p>
           </Reveal>
           <div className="lg:col-span-9">
             <Reveal delay={0.05}>
@@ -54,7 +54,7 @@ export default function Contact() {
         </Reveal>
 
         <div className="mt-[clamp(7rem,11vw,10rem)] flex flex-col gap-3 border-t border-white/10 pt-5 text-sm text-[#747870] sm:flex-row sm:justify-between">
-          <span>José Zapata · Software Engineer</span>
+          <span>José Zapata · Desarrollador backend</span>
           <span>Nicaragua · 2026</span>
         </div>
       </div>
