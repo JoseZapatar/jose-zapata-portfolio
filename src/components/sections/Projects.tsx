@@ -6,19 +6,6 @@ import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import Reveal from "@/components/ui/Reveal";
 
-const narratives = [
-  {
-    problem: "Una agencia sin certificación no debía poder publicar viajes.",
-    decision: "La validación debía protegerse desde la API y no depender del cliente.",
-    result: "La regla permanece activa aunque cambie el frontend o se agregue una aplicación móvil.",
-  },
-  {
-    problem: "Adoptantes, mascotas y solicitudes necesitaban convivir sin perder control de permisos.",
-    decision: "Separar responsabilidades mediante roles, JWT y endpoints especializados.",
-    result: "El flujo de adopción quedó más claro para usuarios y administradores.",
-  },
-];
-
 export default function Projects() {
   return (
     <section id="projects" className="section-shell scroll-mt-24">
@@ -32,7 +19,7 @@ export default function Projects() {
 
         <div className="mt-[clamp(7rem,12vw,12rem)] space-y-[clamp(11rem,16vw,18rem)]">
           {projects.map((project, index) => {
-            const story = narratives[index] ?? narratives[0];
+            const story = project.narrative;
             const reverse = index % 2 === 1;
 
             return (
@@ -55,7 +42,7 @@ export default function Projects() {
 
                   <div className={`lg:col-span-4 ${reverse ? "lg:order-1 lg:pr-3" : "lg:pl-2"}`}>
                     <h3 className="text-[clamp(2.65rem,4.45vw,4.8rem)] font-medium leading-[0.97] tracking-[-0.052em]">
-                      {index === 0 ? "Sistema de reservas para agencias certificadas." : "Una plataforma para organizar procesos de adopción."}
+                      {project.headline}
                     </h3>
                     <p className="mt-5 text-sm text-[#8D918B]">{project.title}</p>
 
