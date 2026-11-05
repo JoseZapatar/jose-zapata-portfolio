@@ -1,9 +1,9 @@
 import Reveal from "@/components/ui/Reveal";
 
 const notes = [
-  { label: "Currently", value: "Ingeniería en Sistemas" },
-  { label: "Focus", value: "Backend · REST APIs · Full Stack" },
-  { label: "Learning", value: "Flutter · Laravel" },
+  { label: "Actualmente", value: "Ingeniería en Sistemas" },
+  { label: "Enfoque", value: "Backend · APIs REST · Full stack" },
+  { label: "Aprendiendo", value: "Flutter · Laravel" },
 ];
 
 export default function About() {
@@ -12,7 +12,7 @@ export default function About() {
       <div className="editorial-container">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           <Reveal className="lg:col-span-3">
-            <p className="editorial-label">About / 01</p>
+            <p className="editorial-label">Sobre mí / 01</p>
           </Reveal>
 
           <div className="lg:col-span-9">

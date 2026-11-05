@@ -5,9 +5,9 @@ import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 
 const navigation = [
-  { name: "About", href: "/#about" },
-  { name: "Projects", href: "/#projects" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Sobre mí", href: "/#about" },
+  { name: "Proyectos", href: "/#projects" },
+  { name: "Contacto", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -27,7 +27,7 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-[border-color] duration-500 ${scrolled ? "border-b border-white/[0.10]" : "border-b border-transparent"}`}>
+    <header className={`fixed inset-x-0 top-0 z-50 bg-[#0A0B09] transition-[border-color] duration-500 ${scrolled ? "border-b border-white/[0.10]" : "border-b border-transparent"}`}>
       <nav className="editorial-container flex h-[76px] items-center justify-between">
         <a href="/#home" aria-label="Ir al inicio" className="font-mono text-sm font-semibold tracking-[0.16em]">
           JZ<span className="text-[#D7FF43]">.</span>

@@ -5,6 +5,7 @@ export type Project = {
   category: string;
   subtitle: string;
   description: string;
+  role?: string;
   technologies: string[];
   status: "Live" | "Repository";
   demoUrl?: string;
@@ -21,11 +22,13 @@ export const projects: Project[] = [
     id: "travel-booking",
     slug: "viajespro",
     title: "ViajesPro",
-    category: "Travel Booking Platform",
+    category: "Plataforma de reservas de viajes",
     subtitle:
       "Reservas, certificación de agentes y administración de viajes",
     description:
       "Plataforma de gestión y reservas de viajes que permite explorar paquetes, certificar agentes, administrar disponibilidades y gestionar reservaciones mediante un frontend web y una API REST.",
+    role:
+      "Diseñé y desarrollé las APIs REST con ASP.NET Core, implementé autenticación JWT, autorización por roles y validaciones para agentes certificados, diseñé la base de datos en SQL Server e integré el frontend con la API.",
     technologies: [
       "ASP.NET Core",
       "Next.js",
@@ -56,11 +59,13 @@ export const projects: Project[] = [
     id: "pet-adoption",
     slug: "pet-adopt",
     title: "Pet Adopt",
-    category: "Pet Adoption Platform",
+    category: "Plataforma de adopción de mascotas",
     subtitle:
       "Gestión integral de mascotas, adoptantes y solicitudes",
     description:
       "Aplicación web para gestionar mascotas disponibles, perfiles de adoptantes y solicitudes de adopción con seguridad basada en JWT y control de roles.",
+    role:
+      "Desarrollé las APIs REST y el flujo de solicitudes de adopción con aprobación administrativa, implementé autenticación JWT, roles y protección con API Key, e integré React Query para consumir la API.",
     technologies: [
       "ASP.NET Core",
       "React",

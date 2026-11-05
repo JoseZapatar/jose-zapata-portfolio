@@ -24,7 +24,7 @@ export default function Projects() {
     <section id="projects" className="section-shell scroll-mt-24">
       <div className="editorial-container">
         <div className="grid gap-10 lg:grid-cols-12">
-          <Reveal className="lg:col-span-3"><p className="editorial-label">Selected work / 02</p></Reveal>
+          <Reveal className="lg:col-span-3"><p className="editorial-label">Proyectos destacados / 02</p></Reveal>
           <Reveal className="lg:col-span-9" delay={0.05}><h2 className="section-heading max-w-[920px] text-balance">
             Proyectos donde las decisiones técnicas importaron más que la cantidad de funcionalidades.
           </h2></Reveal>
@@ -38,7 +38,7 @@ export default function Projects() {
             return (
               <Reveal key={project.id} y={24}><article className="border-t border-white/10 pt-6">
                 <div className="mb-12 flex items-start justify-between gap-6">
-                  <p className="editorial-label">Case {String(index + 1).padStart(2, "0")}</p>
+                  <p className="editorial-label">Caso {String(index + 1).padStart(2, "0")}</p>
                   <p className="max-w-xs text-right text-sm text-[#8D918B]">{project.category}</p>
                 </div>
 
@@ -60,7 +60,7 @@ export default function Projects() {
                     <p className="mt-5 text-sm text-[#8D918B]">{project.title}</p>
 
                     <div className="mt-12 divide-y divide-white/10 border-y border-white/10">
-                      {[["Problem", story.problem], ["Decision", story.decision], ["Result", story.result]].map(([label, value]) => (
+                      {[["Problema", story.problem], ["Decisión", story.decision], ["Resultado", story.result]].map(([label, value]) => (
                         <div key={label} className="group/row grid gap-3 py-6 sm:grid-cols-[105px_1fr]">
                           <p className="editorial-label transition-colors duration-300 group-hover/row:text-[#D7FF43]">{label}</p>
                           <p className="leading-7 text-[#B8BCB2] transition-colors duration-300 group-hover/row:text-[#D2D5CD]">{value}</p>
@@ -69,7 +69,7 @@ export default function Projects() {
                     </div>
 
                     <Link href={`/projects/${project.slug}`} className="link-underline mt-8 inline-flex items-center gap-2 pb-1 text-sm transition-colors duration-300 hover:text-[#D7FF43]">
-                      Explore case study <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                      Ver caso de estudio <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </Link>
                   </div>
                 </div>

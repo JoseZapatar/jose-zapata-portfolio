@@ -94,6 +94,27 @@ button, a { -webkit-tap-highlight-color: transparent; }
   transform-origin: left;
 }
 
+.button-primary,
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: background-color 300ms ease, border-color 300ms ease;
+}
+.button-primary { color: #0a0b09; background: var(--accent); }
+.button-primary:hover { background: #e6ff85; }
+.button-secondary { border: 1px solid rgba(236, 233, 223, 0.22); }
+.button-secondary:hover {
+  background: rgba(236, 233, 223, 0.06);
+  border-color: rgba(236, 233, 223, 0.45);
+}
+
 .product-frame {
   position: relative;
   padding: clamp(0.65rem, 1.2vw, 1rem);
