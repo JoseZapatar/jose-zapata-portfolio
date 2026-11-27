@@ -2274,6 +2274,131 @@ export const projectDetails: ProjectDetail[] = [
         roadmap: [],
     },
 
+    {
+        slug: "haven",
+
+        metrics: [],
+
+        overview: {
+            status: "Proyecto de hackathon",
+            frontend: "Expo y Next.js",
+            backend: "Next.js (API Routes)",
+            database: "MongoDB",
+            authentication: "Código de invitación",
+            deployment: "Vercel",
+        },
+
+        architecture: {
+            title: "Separación de responsabilidades en HAVEN",
+            description:
+                "Un monorepo reúne la app del astronauta, el Apple Watch, la vista web con su API y un paquete común con las reglas de salud, de modo que la app y la web evalúan con la misma lógica.",
+            layers: [
+                {
+                    name: "App del astronauta",
+                    responsibility:
+                        "Muestra indicadores, la rutina diaria, las pruebas y el SOS, y guarda los datos en una cola local cuando no hay enlace.",
+                    technologies: ["Expo", "Expo Router", "NativeWind", "SQLite"],
+                    type: "presentation",
+                },
+                {
+                    name: "Apple Watch",
+                    responsibility:
+                        "Muestra el ritmo cardiaco en vivo y permite lanzar la alarma SOS.",
+                    technologies: ["SwiftUI"],
+                    type: "presentation",
+                },
+                {
+                    name: "Vista de Tierra y API",
+                    responsibility:
+                        "Recibe los paquetes de la tripulación, sirve planes y reglas, y muestra misiones, KPI y el asistente Orion.",
+                    technologies: ["Next.js", "shadcn/ui", "AI SDK"],
+                    type: "application",
+                },
+                {
+                    name: "Motor de reglas",
+                    responsibility:
+                        "Evalúa los indicadores con umbrales versionados y define la lógica de cada contramedida, compartida por la app y la web.",
+                    technologies: ["TypeScript", "Vitest"],
+                    type: "domain",
+                },
+                {
+                    name: "Persistencia",
+                    responsibility:
+                        "Guarda misiones, tripulación, paquetes y planes.",
+                    technologies: ["MongoDB Atlas", "Docker"],
+                    type: "persistence",
+                },
+            ],
+        },
+
+        systemDesign: {
+            title: "",
+            description: "",
+            nodes: [],
+        },
+
+        databaseModel: {
+            title: "",
+            description: "",
+            entities: [],
+            relationships: [],
+        },
+
+        flow: [],
+        features: [],
+        techStack: [],
+
+        decisions: [
+            {
+                question: "¿Qué pasa cuando se corta el enlace con la Tierra?",
+                answer:
+                    "La app sigue evaluando la salud a bordo, guarda cada paquete en una cola local y los envía cuando vuelve la conexión.",
+            },
+            {
+                question: "¿Cómo comparten la lógica la app y la web?",
+                answer:
+                    "Las reglas y los umbrales viven en un paquete común que usan la app del astronauta y la vista web, así que ambas evalúan igual.",
+            },
+            {
+                question: "¿Qué ocurre con retardos largos, como en Marte?",
+                answer:
+                    "La app calcula cuándo puede responder la Tierra y, si el retardo es largo, guía a la tripulación para actuar por su cuenta. La web lo indica en la cabecera y en cada emergencia.",
+            },
+            {
+                question: "¿Cómo se evita contar dos veces una lectura?",
+                answer:
+                    "Cada paquete repite las últimas 24 horas, así que la web cuenta cada lectura una sola vez.",
+            },
+        ],
+
+        gallery: [
+            {
+                title: "Vista de Tierra",
+                image: "/images/projects/haven/ground-view.png",
+                description:
+                    "El equipo en Tierra sigue el estado de cada tripulante, sus alertas y su rutina. Datos de demostración.",
+            },
+            {
+                title: "Emergencias en el Apple Watch",
+                image: "/images/projects/haven/watch.png",
+                description:
+                    "Alarma SOS y pantalla de emergencia con ritmo cardiaco en vivo. Datos de demostración.",
+            },
+        ],
+
+        lessons: [
+            "Una contramedida solo funciona si aparece en el momento justo, por eso cada una se integra a la rutina diaria con recordatorios.",
+            "Diseñar para el retardo de las comunicaciones obliga a decidir qué se resuelve a bordo y qué puede esperar a la Tierra.",
+            "Los datos que se repiten entre paquetes distorsionan los indicadores si no se cuentan una sola vez.",
+            "Preparar una misión de demostración para cada función hizo más fácil probarla y explicarla.",
+        ],
+
+        codeStructure: [],
+        apiEndpoints: [],
+        challenges: [],
+        roadmap: [],
+    },
+
 ];
 
 
