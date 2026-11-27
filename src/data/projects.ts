@@ -156,5 +156,51 @@ export const projects: Project[] = [
     solution:
       "Lumora Health Staff reúne esos flujos en una app Expo conectada a una API con FastAPI y PostgreSQL. El backend valida la relación entre profesional y paciente, limita la edición de diagnósticos y recetas a 48 horas y permite un registro de emergencia con solo nombre y apellido.",
   },
+  {
+    id: "haven",
+    slug: "haven",
+    title: "HAVEN",
+    category: "Salud espacial · NASA Space Apps 2026",
+    subtitle:
+      "Monitoreo de salud para astronautas en misiones de larga duración",
+    description:
+      "Plataforma con una app para iPhone y Apple Watch que usa la tripulación y una vista web con la que el equipo en Tierra sigue su salud, incluso cuando se interrumpe el enlace con la Tierra.",
+    headline: "Contramedidas de salud para una tripulación que no siempre puede esperar a la Tierra.",
+    narrative: {
+      problem:
+        "En una misión a Marte, cada mensaje puede tardar varios minutos en llegar a la Tierra.",
+      decision:
+        "Calcular a bordo cuándo puede responder la Tierra y, con retardos largos, guiar a la tripulación para actuar por su cuenta.",
+      result:
+        "La app y la vista web muestran el modo de comunicación y cuándo llegará cada respuesta.",
+    },
+    role:
+      "En el equipo CODA, durante NASA Space Apps 2026, desarrollé las contramedidas de salud de punta a punta, en el motor de reglas, la app del astronauta y la vista web: preparación para la reentrada y las salidas extravehiculares, medicación y muestras, ejercicio, cinetosis, carga de trabajo y el retardo de las comunicaciones.",
+    technologies: [
+      "TypeScript",
+      "Next.js",
+      "MongoDB",
+      "Expo",
+      "React Native",
+      "SQLite",
+    ],
+    status: "Repository",
+    frontendUrl:
+      "https://github.com/Steven-Mendez/haven/tree/main/apps/mobile",
+    backendUrl:
+      "https://github.com/Steven-Mendez/haven/tree/main/apps/web/src/app/api",
+    accent: "from-indigo-500/20 via-slate-500/10 to-transparent",
+    highlights: [
+      "Evaluación de salud a bordo, aun sin enlace con la Tierra",
+      "Contramedidas integradas a la rutina diaria",
+      "Seguimiento de la tripulación desde la web",
+    ],
+    image: "/images/projects/haven/hero.png",
+    problem:
+      "En una misión larga, la tripulación necesita seguir sus indicadores de salud, cumplir contramedidas como el ejercicio o la medicación y actuar ante emergencias, aunque el enlace con la Tierra esté caído o tenga minutos de retardo.",
+
+    solution:
+      "HAVEN evalúa la salud a bordo con un motor de reglas compartido y umbrales versionados, guarda los datos en una cola local mientras no hay conexión y los envía cuando vuelve el enlace. Desde la web, el equipo en Tierra sigue a la tripulación, ajusta los planes de medicación y ejercicio y ve cuándo llegarán sus respuestas.",
+  },
 
 ];
